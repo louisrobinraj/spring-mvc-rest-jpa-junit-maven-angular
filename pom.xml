@@ -7,13 +7,19 @@
 	<packaging>war</packaging>
 	<properties>
 		<jdk.version>1.6</jdk.version>
-		
+
 	</properties>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+		</dependency>
 
-	
-	
+
+
 
 	</dependencies>
 
