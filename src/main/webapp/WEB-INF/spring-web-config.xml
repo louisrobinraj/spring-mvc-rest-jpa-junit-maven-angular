@@ -96,5 +96,13 @@
 		</property>
 	</bean>
 	<bean id="executeTimeInterceptor" class="com.sjc.hrms.intercepters.ProcessingTimeInterceptors" />
-
+	
+	<bean id="maintenanceInterceptor" class="com.sjc.hrms.intercepters.MaintenanceInterceptor">
+		<property name="maintenanceStartTime" value="23" />
+		<property name="maintenanceEndTime" value="24" />
+		<property name="maintenanceMapping" value="/SpringMVC/maintenance.htm" />
+	</bean>
+	
+	
+	
 </beans>
