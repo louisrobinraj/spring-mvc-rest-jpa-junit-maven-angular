@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <html id="ng-app" class="ng-app:myapp">
 <head>
 <meta charset="iso-8859-1">
@@ -9,13 +10,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title></title>
-<head></head>
+<style>
+body {
+	font-style: italic;
+	width: 50%;
+	margin: 0px auto;
+}
 
+#login_form {
+	margin-top: 10%;
+}
 
+#f1 {
+	background-color: #FFF;
+	border-style: solid;
+	border-width: 1px;
+	padding: 23px 1px 20px 114px;
+}
+
+.f1_label {
+	white-space: nowrap;
+}
+
+span {
+	color: white;
+}
+
+.new {
+	background: black;
+	text-align: center;
+}
+</style>
 </head>
-
 <body>
 
+	<div id="login_form">
+		<div class="new">
+			<span>Enter login details</span>
+		</div>
+		<form:form id="loginForm" method="post" action="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/authenticate.action"
+			modelAttribute="user">
+			<table>
+				<tr>
+					<td class="f1_label">User Name :</td>
+					<td><input type="text" name="userName" /></td>
+				</tr>
+				<tr>
+					<td class="f1_label">Password :</td>
+					<td><input type="password" name="password" /></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="login" value="Log In"
+						style="font-size: 18px;" /></td>
+				</tr>
+			</table>
+		</form:form>
+
+	</div>
 
 </body>
 </html>
