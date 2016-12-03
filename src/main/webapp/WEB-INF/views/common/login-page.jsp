@@ -40,6 +40,17 @@ span {
 	background: black;
 	text-align: center;
 }
+.error {
+	color: #ff0000;
+}
+
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
 </style>
 </head>
 <body>
@@ -48,16 +59,20 @@ span {
 		<div class="new">
 			<span>Enter login details</span>
 		</div>
-		<form:form id="loginForm" method="post" action="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/authenticate.action"
+		<form:form id="loginForm" method="post"
+			action="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/authenticate.action"
 			modelAttribute="user">
+			<form:errors path="*" cssClass="errorblock" element="div" />
 			<table>
 				<tr>
 					<td class="f1_label">User Name :</td>
 					<td><input type="text" name="userName" /></td>
+					<td><form:errors path="userName" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td class="f1_label">Password :</td>
 					<td><input type="password" name="password" /></td>
+					<td><form:errors path="password" cssClass="error" /></td>
 				</tr>
 				<tr>
 					<td><input type="submit" name="login" value="Log In"

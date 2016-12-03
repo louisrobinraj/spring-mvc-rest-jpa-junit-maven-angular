@@ -4,15 +4,18 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name = "UserDetail")
 public class UserDetail extends BaseEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@Column // @NotEmpty
+	@Column
+	@NotEmpty
 	private String userName;
-	// @NotEmpty
+	@NotEmpty
 	@Column
 	private String password;
 

@@ -19,10 +19,10 @@
 			.config(function($routeProvider, $httpProvider) {
 
 				$routeProvider.when('/login/:redirectto*', {
-					templateUrl : 'static/templates/common/login-page.html',
+					templateUrl : '/spring-mvc-rest-jpa-junit-maven-angular/resources/templates/common/login-page.html',
 					controller : 'Router'
-				}).when('/a', {
-					templateUrl : 'static/templates/common/login-page.html',
+				}).when('/about', {
+					templateUrl : '/spring-mvc-rest-jpa-junit-maven-angular/resources/templates/common/about-page.html',
 					controller : 'Router'
 				}).
 
@@ -47,18 +47,31 @@
 		<li><a href="#">Home</a></li>
 		<li><a href="#about">About Us</a>
 			<ul>
-				<li><a href="">The Team</a></li>
+				<li><a href="">Office</a></li>
 				<li><a href="">History</a></li>
 				<li><a href="">Vision</a></li>
 			</ul></li>
-		<li><a href="">Products</a>
+		<li><a href="">HR-Payroll</a>
 			<ul>
-				<li><a href="">Cozy Couch</a></li>
-				<li><a href="">Great Table</a></li>
-				<li><a href="">Small Chair</a></li>
-				<li><a href="">Shiny Shelf</a></li>
-				<li><a href="">Invisible Nothing</a></li>
-			</ul></li>
+				<li><a href="">View Salary Slip</a></li>
+				<li><a href="">Sodoxo</a></li>
+				<li><a href="">Food Card</a></li>
+				<li><a href="">Income Tax</a></li>
+				<li><a href="">Help Desk</a></li>
+			</ul>
+		</li>
+		<li><a href="">Employee management</a>
+			<ul>
+				<li><a href="">New Join</a></li>
+				<li><a href="">Exit Employee</a></li>
+			</ul>
+		</li>
+		<li><a href="">Help Disk</a>
+			<ul>
+				<li><a href="">New Join</a></li>
+				<li><a href="">Exit Employee</a></li>
+			</ul>
+		</li>
 		<li><a href="">Contact</a>
 			<ul>
 				<li><a href="">Online</a></li>

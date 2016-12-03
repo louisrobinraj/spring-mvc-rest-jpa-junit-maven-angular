@@ -21,15 +21,16 @@
     http://www.springframework.org/schema/data/jpa
     http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
     http://www.springframework.org/schema/util
-    http://www.springframework.org/schema/util/spring-util.xsd">
-
+    http://www.springframework.org/schema/util/spring-util.xsd"
+	default-lazy-init="true">
+	
 	<!-- It register the beans in context and scan the annotations inside beans and activate them -->
 	<context:component-scan base-package="com.sjc.hrms" />
 
 	<!-- This helps in mapping the logical view names to directly view files under a certain pre-configured directory -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"	value="org.springframework.web.servlet.view.JstlView" />
-		<property name="prefix" value="/WEB-INF/views/common/" />
+		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 
@@ -84,5 +85,16 @@
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="messages" />
     </bean>
+
+
+	<!-- interceptor -->
+	<bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="executeTimeInterceptor" />
+			</list>
+		</property>
+	</bean>
+	<bean id="executeTimeInterceptor" class="com.sjc.hrms.intercepters.ProcessingTimeInterceptors" />
 
 </beans>

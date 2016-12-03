@@ -4,9 +4,12 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.sjc.hrms.exception.GenericException;
 
 @RequestMapping(value = "/api/v1")
 
@@ -35,7 +38,28 @@ public class BaseController {
 	public ModelAndView index(Map<String, Object> model) {
 
 		logger.debug("index() is executed!");
-		
-		return new ModelAndView("index");
+
+		return new ModelAndView("common/login-page");
 	}
+
+//	@ExceptionHandler(GenericException.class)
+//	public ModelAndView handleCustomException(GenericException ex) {
+//
+//		ModelAndView model = new ModelAndView("error/generic_error");
+//		model.addObject("errCode", ex.getErrCode());
+//		model.addObject("errMsg", ex.getErrMsg());
+//
+//		return model;
+//
+//	}
+//
+//	@ExceptionHandler(Exception.class)
+//	public ModelAndView handleAllException(Exception ex) {
+//
+//		ModelAndView model = new ModelAndView("error/generic_error");
+//		model.addObject("errMsg", "this is Exception.class");
+//
+//		return model;
+//
+//	}
 }
