@@ -16,7 +16,7 @@ import com.sjc.hrms.model.UserDetail;
 @Transactional
 public interface UserService {
 
-	public boolean isValidUser(UserDetail user);
+	public boolean isValidUser(UserDetail user) throws Exception;
 
 	public boolean logout(String userName, HttpServletResponse response);
 

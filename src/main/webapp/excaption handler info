@@ -1,0 +1,27 @@
+Exception handling
+
+
+@ControllerAdvice
+public class GlobalExceptionController {
+
+	@ExceptionHandler(RuntimeException.class)
+	public ModelAndView handleAllException(RuntimeException e, HttpServletResponse response) throws IOException {
+		HttpStatus responseCode = HttpStatus.BAD_REQUEST;
+		if (e instanceof ResourceNotFoundException) {
+			responseCode = HttpStatus.NOT_FOUND;
+		} else if (e instanceof AccessException) {
+			responseCode = HttpStatus.FORBIDDEN;
+		} else if (e instanceof IllegalArgumentException) {
+			responseCode = HttpStatus.FORBIDDEN;
+		}
+		response.setStatus(responseCode.value());
+		ModelAndView model = new ModelAndView("error/generic_error");
+		model.addObject("errMsg", e.getMessage());
+
+		return model;
+
+	}
+}
+
+
+1)when controller throw Runtime Exception this class executed

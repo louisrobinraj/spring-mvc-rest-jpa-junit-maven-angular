@@ -1,6 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
-<body>
+<body>eneric
 
 	<c:if test="${not empty errCode}">
 		<h1>${errCode}: System Errors</h1>

@@ -1,11 +1,9 @@
 package com.sjc.hrms.persistence.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
@@ -23,8 +21,7 @@ public class UserDetailDaoImpl extends BaseJpaDAO<UserDetail> implements UserDet
 	}
 
 	@Override
-	public UserDetail getUserDetails(UserDetail user) {
-
+	public UserDetail getUserDetails(UserDetail user)  {
 		CriteriaBuilder criteriaBuilder = createCriteriaBuilder();
 		CriteriaQuery<UserDetail> criteriaQuery = criteriaBuilder.createQuery(UserDetail.class);
 		Root<UserDetail> from = criteriaQuery.from(UserDetail.class);
@@ -33,7 +30,6 @@ public class UserDetailDaoImpl extends BaseJpaDAO<UserDetail> implements UserDet
 		Predicate predicate = criteriaBuilder.equal(from.get("userName"), user.getUserName());
 		criteriaQuery.where(predicate);
 		userDetail = executeCriteriaQuery(criteriaQuery);
-		return (userDetail == null) ? null : userDetail.get(0);
+		return userDetail.size() > 0 ? userDetail.get(0) : null;
 	}
-
 }

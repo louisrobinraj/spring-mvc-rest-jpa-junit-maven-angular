@@ -4,6 +4,25 @@
 
 
 
+//	@ExceptionHandler(RuntimeException.class)
+//	@ResponseBody
+//	public ErrorMessageDTO handleException(RuntimeException e, HttpServletResponse response) throws IOException {
+//		HttpStatus responseCode = HttpStatus.BAD_REQUEST;
+//		if (e instanceof ResourceNotFoundException) {
+//			responseCode = HttpStatus.NOT_FOUND;
+//		} else if (e instanceof AccessException) {
+//			responseCode = HttpStatus.FORBIDDEN;
+//		} else if (e instanceof IllegalArgumentException) {
+//			responseCode = HttpStatus.FORBIDDEN;
+//		}
+//		response.setStatus(responseCode.value());
+//		ErrorMessageDTO msg = new ErrorMessageDTO();
+//		msg.setMessage(e.getMessage());
+//		return msg;
+//	}
+
+
+
 
 <!-- Simple implementation of the standard JDBC DataSource interface, 
         configuring the plain old JDBC DriverManager via bean properties -->

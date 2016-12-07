@@ -19,9 +19,10 @@ public class UserServiceImpl implements UserService {
 	public boolean isValidUser(UserDetail user) {
 
 		UserDetail userData = userDetailDao.getUserDetails(user);
-		if (userData != null && userData.getUserName().equals(user.getUserName())) {
+		if (userData != null) {
 			return true;
 		}
+
 		return false;
 
 	}
