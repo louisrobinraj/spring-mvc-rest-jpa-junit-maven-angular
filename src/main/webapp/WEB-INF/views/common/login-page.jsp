@@ -40,6 +40,7 @@ span {
 	background: black;
 	text-align: center;
 }
+
 .error {
 	color: #ff0000;
 }
@@ -80,7 +81,7 @@ span {
 				</tr>
 			</table>
 		</form:form>
-
+	<a href="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/forgetPassword.action">forget Password</a>
 	</div>
 
 </body>

@@ -28,7 +28,7 @@ public class LoginController extends BaseController {
 	private UserService userService;
 
 	@RequestMapping(value = "/hrms/authenticate", method = RequestMethod.POST)
-	public ModelAndView executeLogin(@Valid @ModelAttribute("user") UserDetail user, BindingResult bindingresult,
+	public ModelAndView login(@Valid @ModelAttribute("user") UserDetail user, BindingResult bindingresult,
 			HttpServletRequest request, HttpServletResponse response, HttpSession session, Model model)
 					throws Exception {
 		ModelAndView modelAndView = new ModelAndView();
@@ -46,11 +46,19 @@ public class LoginController extends BaseController {
 	}
 
 	@RequestMapping(value = "/hrms/logout", method = RequestMethod.GET)
-	public void handleLogout(String userName, HttpServletResponse response) {
+	public void logout(String userName, HttpServletResponse response) {
 		LOGGER.info("Triggering logout");
 		if (!StringUtils.hasText(userName)) {
 			throw new IllegalArgumentException("Username must not be null or empty!");
 		}
 		userService.logout(userName, response);
+	}
+	@RequestMapping(value = "/hrms/forgetPassword/{userName}", method = RequestMethod.GET)
+	public ModelAndView forgetPassword(String userName, HttpServletResponse response) {
+		LOGGER.info("forgetPassword load forgot page");
+		if (!StringUtils.hasText(userName)) {
+			throw new IllegalArgumentException("Username must not be null or empty!");
+		}
+		return new ModelAndView("");
 	}
 }
