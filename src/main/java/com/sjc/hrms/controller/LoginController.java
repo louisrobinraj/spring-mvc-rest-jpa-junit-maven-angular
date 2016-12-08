@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -45,8 +46,8 @@ public class LoginController extends BaseController {
 		return modelAndView;
 	}
 
-	@RequestMapping(value = "/hrms/logout", method = RequestMethod.GET)
-	public void logout(String userName, HttpServletResponse response) {
+	@RequestMapping(value = "/hrms/logout/{userName}", method = RequestMethod.GET)
+	public void logout(@PathVariable String userName, HttpServletResponse response) {
 		LOGGER.info("Triggering logout");
 		if (!StringUtils.hasText(userName)) {
 			throw new IllegalArgumentException("Username must not be null or empty!");
@@ -54,11 +55,11 @@ public class LoginController extends BaseController {
 		userService.logout(userName, response);
 	}
 	@RequestMapping(value = "/hrms/forgetPassword/{userName}", method = RequestMethod.GET)
-	public ModelAndView forgetPassword(String userName, HttpServletResponse response) {
+	public ModelAndView forgetPassword(@PathVariable String userName, HttpServletResponse response) {
 		LOGGER.info("forgetPassword load forgot page");
 		if (!StringUtils.hasText(userName)) {
 			throw new IllegalArgumentException("Username must not be null or empty!");
 		}
-		return new ModelAndView("");
+		return new ModelAndView("resetPassword");
 	}
 }

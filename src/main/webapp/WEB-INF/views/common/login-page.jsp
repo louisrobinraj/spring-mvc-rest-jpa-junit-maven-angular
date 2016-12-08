@@ -61,7 +61,7 @@ span {
 			<span>Enter login details</span>
 		</div>
 		<form:form id="loginForm" method="post"
-			action="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/authenticate.action"
+			action="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/authenticate"
 			modelAttribute="user">
 			<form:errors path="*" cssClass="errorblock" element="div" />
 			<table>
@@ -81,7 +81,7 @@ span {
 				</tr>
 			</table>
 		</form:form>
-	<a href="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/forgetPassword.action">forget Password</a>
+	<a href="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/forgetPassword">forget Password</a>
 	</div>
 
 </body>

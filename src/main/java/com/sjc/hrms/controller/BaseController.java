@@ -47,7 +47,8 @@ public class BaseController {
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.addObject("errCode", "");
 		modelAndView.addObject("errMsg", e.getMessage());
-		modelAndView.setViewName("error/generic_error.jsp");
+		modelAndView.addObject("exception", e);
+		modelAndView.setViewName("error/generic_error");
 		return modelAndView;
 	}
 }
