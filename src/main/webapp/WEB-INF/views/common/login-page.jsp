@@ -59,6 +59,7 @@ span {
 	<div id="login_form">
 		<div class="new">
 			<span>Enter login details</span>
+			<span class="errorblock">${message}</span> 
 		</div>
 		<form:form id="loginForm" method="post"
 			action="/spring-mvc-rest-jpa-junit-maven-angular/api/v1/hrms/authenticate"

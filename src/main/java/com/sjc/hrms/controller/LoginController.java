@@ -38,11 +38,14 @@ public class LoginController extends BaseController {
 		} else {
 				boolean isValidUser = userService.isValidUser(user);
 				if (isValidUser) {
+					session.setAttribute("userName",user.getUserName());
 					modelAndView.setViewName("common/menu");
 				} else {
+					model.addAttribute("message", "Invalid User Credantial.");
 					modelAndView.setViewName("common/login-page");
 				}
 		}
+		//return "redirect:success.jsp";
 		return modelAndView;
 	}
 
