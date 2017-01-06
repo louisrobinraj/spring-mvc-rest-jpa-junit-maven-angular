@@ -30,7 +30,7 @@ public class MaintenanceInterceptor extends HandlerInterceptorAdapter {
 			throws Exception {
 		System.out.println("pre Handle MaintenanceInterceptor method executed");
 		Calendar cal = Calendar.getInstance();
-		int hour = cal.get(cal.HOUR_OF_DAY);
+		int hour = cal.get(Calendar.HOUR_OF_DAY);
 
 		if (hour >= maintenanceStartTime && hour <= maintenanceEndTime) {
 			// maintenance time, send to maintenance page

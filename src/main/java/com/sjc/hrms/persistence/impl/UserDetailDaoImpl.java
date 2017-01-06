@@ -25,11 +25,11 @@ public class UserDetailDaoImpl extends BaseJpaDAO<UserDetail> implements UserDet
 		CriteriaBuilder criteriaBuilder = createCriteriaBuilder();
 		CriteriaQuery<UserDetail> criteriaQuery = criteriaBuilder.createQuery(UserDetail.class);
 		Root<UserDetail> from = criteriaQuery.from(UserDetail.class);
-		List<UserDetail> userDetail = null;
 		criteriaQuery = criteriaQuery.select(from);
 		Predicate predicate = criteriaBuilder.equal(from.get("userName"), user.getUserName());
 		criteriaQuery.where(predicate);
-		userDetail = executeCriteriaQuery(criteriaQuery);
+		List<UserDetail> userDetail = executeCriteriaQuery(criteriaQuery);
 		return userDetail.size() > 0 ? userDetail.get(0) : null;
 	}
+	
 }

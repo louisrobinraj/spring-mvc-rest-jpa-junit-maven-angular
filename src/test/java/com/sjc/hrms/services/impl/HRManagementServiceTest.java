@@ -4,7 +4,7 @@ import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-public class HR_ManagementServiceTest extends HrmsBaseTest {
+public class HRManagementServiceTest extends HrmsBaseTest {
 
 	@Test
 	public void testSample(){
