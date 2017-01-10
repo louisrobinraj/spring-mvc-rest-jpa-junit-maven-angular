@@ -1,4 +1,4 @@
-package com.sjc.java.interview.code;
+package com.sjc.java.interview.code.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;

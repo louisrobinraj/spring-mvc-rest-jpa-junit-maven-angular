@@ -1,4 +1,4 @@
-package com.sjc.java.interview.code;
+package com.sjc.java.interview.code.collection;
 
 class Employee {
 
