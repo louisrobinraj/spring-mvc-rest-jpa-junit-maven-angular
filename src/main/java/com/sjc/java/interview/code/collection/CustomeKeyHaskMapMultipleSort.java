@@ -21,6 +21,7 @@ public class CustomeKeyHaskMapMultipleSort {
 		employeeMap.put(employee1, 1);
 		employeeMap.put(employee2, 2);
 		employeeMap.put(employee4, 4);
+		employeeMap.put(employee4, 4);
 		List<Entry<Employee, Integer>> entryList = new ArrayList<Map.Entry<Employee, Integer>>(employeeMap.entrySet());
 		Collections.sort(entryList,
 				new MulipleKeyComparator(new IdKeyComparator(), new NameKeyComparator(), new SalaryKeyComparator()));

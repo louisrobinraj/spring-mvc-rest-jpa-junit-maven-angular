@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
@@ -20,7 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.sjc.hrms.model.UserDetail;
 import com.sjc.hrms.services.UserService;
 
-@RestController
+@Component
 public class LoginController extends BaseController {
 
 	private static final Logger LOGGER = Logger.getLogger(LoginController.class);
