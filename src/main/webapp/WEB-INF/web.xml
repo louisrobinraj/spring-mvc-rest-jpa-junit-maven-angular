@@ -10,9 +10,6 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring-web-config.xml</param-value>
-			<!-- <param-value>classpath://resource//spring-web-config.xml</param-value> 
-				just like create resource back and put file -->
-
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -31,8 +28,7 @@
 		<exception-type>java.lang.Exception</exception-type>
 		<location>/WEB-INF/views/error/generic_error.jsp</location>
 	</error-page>
-
-
-
-
+	
 </web-app>
+
+

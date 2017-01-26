@@ -1,4 +1,4 @@
-package com.sjc.hrms.model;
+package com.sjc.hrms.model.persistence;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

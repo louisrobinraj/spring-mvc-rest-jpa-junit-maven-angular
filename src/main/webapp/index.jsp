@@ -1,14 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>home page</title>
+
+<meta charset="UTF-8">
+<title>CodePen - Random Login Form</title>
+<link href="resources/css/main.css" rel="stylesheet">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="resources/js/LoginConroller.js"></script>
+<script type="text/javascript" src="resources/js/hrms_services.js"></script>
 </head>
-<body>
-	<script type="text/javascript">
-		window.location = "/spring-mvc-rest-jpa-junit-maven-angular/api/v1/";
-	</script>
+
+<body ng-app="mainApp">
+	<div class="log-form" ng-controller="LoginController">
+		<h1>Login Page</h1>
+
+		<form>
+			<label>User name</label>
+			<input type="text" ng-model="username"	class="ng-pristine ng-valid">
+			<label>Password</label>
+			<input type="password" ng-model="password" class="ng-pristine ng-valid">
+			<br /> {{loginError}} <br /> <br />
+			
+			<button class="btn btn-success" ng-click="LoginUser()">Submit</button>
+			<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+		</form>
+
+	</div>
+
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-package com.sjc.hrms.data.dto;
+package com.sjc.hrms.model.dto;
 
 public class ErrorMessageDTO {
 

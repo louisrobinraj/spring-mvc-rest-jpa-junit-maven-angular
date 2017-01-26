@@ -10,7 +10,7 @@ import javax.persistence.criteria.Root;
 import org.springframework.stereotype.Component;
 
 import com.sjc.hrms.core.persistence.BaseJpaDAO;
-import com.sjc.hrms.model.UserDetail;
+import com.sjc.hrms.model.persistence.UserDetail;
 import com.sjc.hrms.persistence.UserDetailDao;
 
 @Component
