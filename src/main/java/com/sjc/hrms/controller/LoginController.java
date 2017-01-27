@@ -30,7 +30,6 @@ public class LoginController extends BaseController {
 		UserDetail user = new UserDetail();
 		BeanUtils.copyProperties(userDetailDto, user);
 		boolean isValidUser = userService.isValidUser(user);
-
 		return isValidUser;
 	}
 
