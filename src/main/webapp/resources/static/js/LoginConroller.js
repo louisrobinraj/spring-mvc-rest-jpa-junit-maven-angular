@@ -17,6 +17,7 @@ app.controller(
 												function(result) {
 													if (result) {
 														$scope.loginError = "success";
+														$location.path("/home");
 													} else {
 														$scope.loginError = "Invalid username/password combination";
 													}
