@@ -3,7 +3,6 @@ package com.sjc.java.interview.code.methodoverload;
 public abstract class OverloadPrimitive {
 
 	public static void main(String[] args) {
-
 		boolean boolenvalue = false;
 		char charvalue = 0;
 		byte bytevalue = 0;

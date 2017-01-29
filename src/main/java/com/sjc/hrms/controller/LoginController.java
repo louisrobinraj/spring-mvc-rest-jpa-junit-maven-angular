@@ -51,23 +51,33 @@ public class LoginController extends BaseController {
 		return new ModelAndView("resetPassword");
 	}
 
-//	@RequestMapping(value = "/hrms/authenticate", method = RequestMethod.POST)
-//	public ModelAndView login(@Valid @ModelAttribute("user") UserDetail user, BindingResult bindingresult,
-//			HttpServletRequest request, HttpServletResponse response, HttpSession session, Model model)
-//					throws Exception {
-//		ModelAndView modelAndView = new ModelAndView();
-//		if (bindingresult.hasErrors()) {
-//			modelAndView = new ModelAndView("common/login-page");
-//		} else {
-//			boolean isValidUser = userService.isValidUser(user);
-//			if (isValidUser) {
-//				session.setAttribute("userName", user.getUserName());
-//				modelAndView.setViewName("common/menu");
-//			} else {
-//				model.addAttribute("message", "Invalid User Credantial.");
-//				modelAndView.setViewName("common/login-page");
-//			}
-//		}
-//		return modelAndView;
-//	}
+	@RequestMapping(value = "/hrms/home/", method = RequestMethod.GET)
+	public ModelAndView login() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView = new ModelAndView("common/home-page");
+		return modelAndView;
+	}
+
+	// @RequestMapping(value = "/hrms/authenticate", method =
+	// RequestMethod.POST)
+	// public ModelAndView login(@Valid @ModelAttribute("user") UserDetail user,
+	// BindingResult bindingresult,
+	// HttpServletRequest request, HttpServletResponse response, HttpSession
+	// session, Model model)
+	// throws Exception {
+	// ModelAndView modelAndView = new ModelAndView();
+	// if (bindingresult.hasErrors()) {
+	// modelAndView = new ModelAndView("common/login-page");
+	// } else {
+	// boolean isValidUser = userService.isValidUser(user);
+	// if (isValidUser) {
+	// session.setAttribute("userName", user.getUserName());
+	// modelAndView.setViewName("common/menu");
+	// } else {
+	// model.addAttribute("message", "Invalid User Credantial.");
+	// modelAndView.setViewName("common/login-page");
+	// }
+	// }
+	// return modelAndView;
+	// }
 }

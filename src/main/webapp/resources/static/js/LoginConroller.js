@@ -2,11 +2,12 @@ var app = angular.module("mainApp", []);
 app.controller(
 				'LoginController',
 				[
-						"$scope",
+						"$scope","$location",
 						"LoginHRMSService",
-						function($scope, LoginHRMSService) {
+						function($scope,$location,LoginHRMSService) {
 							var controller = this;
 							$scope.LoginUser = function() {
+								$scope.loginResponse=null;
 								$scope.userdetails = {
 									'userName' : $scope.username,
 									'password' : $scope.password
@@ -15,11 +16,13 @@ app.controller(
 										.login($scope.userdetails)
 										.then(
 												function(result) {
-													if (result) {
-														$scope.loginError = "success";
-														$location.path("/home");
+													console.log(result.data);
+													if (result.data) {
+														$scope.loginResponse = "success";
+														//$location.path("/home");
+														window.location="/spring-mvc-rest-jpa-junit-maven-angular/resources/templates/common/home-page.html";
 													} else {
-														$scope.loginError = "Invalid username/password combination";
+														$scope.loginResponse = "Invalid username/password combination";
 													}
 												});
 							}
