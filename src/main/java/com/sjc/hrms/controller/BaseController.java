@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @RequestMapping(value = "/api/v1")
@@ -43,6 +44,7 @@ public class BaseController {
 //		return msg;
 //	}
 	@ExceptionHandler(RuntimeException.class)
+	@ResponseBody
 	public ModelAndView handleException(RuntimeException e, HttpServletResponse response) throws IOException {
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.addObject("errCode", "");

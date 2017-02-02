@@ -5,8 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sjc.hrms.dao.persistence.UserDetailDao;
 import com.sjc.hrms.model.persistence.UserDetail;
-import com.sjc.hrms.persistence.UserDetailDao;
 import com.sjc.hrms.services.UserService;
 
 @Service

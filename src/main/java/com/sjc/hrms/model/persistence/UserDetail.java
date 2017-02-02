@@ -19,6 +19,12 @@ public class UserDetail extends BaseEntity {
 	@Column
 	private String password;
 
+	@Column
+	private String token;
+
+	@Column
+	private boolean isEnableUSer;
+
 	public String getUserName() {
 		return userName;
 	}
@@ -33,6 +39,22 @@ public class UserDetail extends BaseEntity {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public boolean isEnableUSer() {
+		return isEnableUSer;
+	}
+
+	public void setEnableUSer(boolean isEnableUSer) {
+		this.isEnableUSer = isEnableUSer;
 	}
 
 }
