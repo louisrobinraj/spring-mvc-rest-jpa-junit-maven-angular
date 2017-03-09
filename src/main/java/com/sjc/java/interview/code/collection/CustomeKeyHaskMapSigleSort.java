@@ -1,11 +1,12 @@
 package com.sjc.java.interview.code.collection;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.TreeMap;
 
 public class CustomeKeyHaskMapSigleSort {
 	public static void main(String args[]) {
@@ -19,9 +20,17 @@ public class CustomeKeyHaskMapSigleSort {
 		employeeMap.put(employee1, 3);
 		employeeMap.put(employee2, 1);
 		employeeMap.put(employee4, 2);
-		Map<Employee,Integer> em=new TreeMap<Employee, Integer>(employeeMap);
-		System.out.println(em.size());
-		List<Entry<Employee, Integer>> entryList = new ArrayList<Map.Entry<Employee, Integer>>(em.entrySet());
+
+		List<Map.Entry<Employee, Integer>> entryList = new ArrayList<Map.Entry<Employee, Integer>>(
+				employeeMap.entrySet());
+		Collections.sort(entryList, new Comparator<Entry<Employee, Integer>>() {
+			@Override
+			public int compare(Map.Entry<Employee, Integer> o1, Map.Entry<Employee, Integer> o2) {
+
+				return o1.getKey().getId() - o2.getKey().getId();
+			}
+		});
+
 		printValues(entryList);
 
 	}
@@ -29,7 +38,8 @@ public class CustomeKeyHaskMapSigleSort {
 	public static void printValues(List<Entry<Employee, Integer>> entryList) {
 
 		for (Map.Entry<Employee, Integer> entry : entryList) {
-			System.out.println(" ID " + entry.getKey().getId() + " Name " + entry.getKey().getName() + " Salary "+ entry.getKey().getSalary());
+			System.out.println(" ID " + entry.getKey().getId() + " Name " + entry.getKey().getName() + " Salary "
+					+ entry.getKey().getSalary());
 		}
 
 	}

@@ -26,3 +26,4 @@ class ThrowsExeption {
 		System.out.println("normal flow...");
 	}
 }
+// 1.

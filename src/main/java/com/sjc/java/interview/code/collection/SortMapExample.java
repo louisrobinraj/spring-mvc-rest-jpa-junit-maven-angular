@@ -41,9 +41,7 @@ public class SortMapExample {
 			}
 		});
 		System.out.println("\nAfter sorting by key(ascending): ");
-		for (
-
-		Map.Entry<Integer, String> entry : listOfentrySet) {
+		for (Map.Entry<Integer, String> entry : listOfentrySet) {
 			System.out.println(entry.getKey() + "=" + entry.getValue() + "  ");
 		}
 	}

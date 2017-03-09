@@ -68,7 +68,7 @@ class MulipleComparator implements Comparator<Map.Entry<Integer, Employee>> {
 	}
 
 	@Override
-	public int compare(Entry<Integer, Employee> o1, Entry<Integer, Employee> o2) {
+	public int compare(Map.Entry<Integer, Employee> o1, Map.Entry<Integer, Employee> o2) {
 		for (Comparator<Map.Entry<Integer, Employee>> listCompareEntry : list) {
 			int result = listCompareEntry.compare(o1, o2);
 			if (result != 0) {

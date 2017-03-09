@@ -2,6 +2,7 @@ package com.sjc.java.interview.code.collection;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CustomeArrayListSigleSort {
@@ -9,10 +10,17 @@ public class CustomeArrayListSigleSort {
 	public static void main(String args[]) {
 
 		List<Student> listStudent = new ArrayList<Student>();
-		listStudent.add(new Student(2, "robin", "CS"));
+		listStudent.add(new Student(2, "robin", "XS"));
 		listStudent.add(new Student(1, "robin", "MBA"));
 		listStudent.add(new Student(3, "robin", "CS"));
-		Collections.sort(listStudent);
+		Collections.sort(listStudent, new Comparator<Student>() {
+
+			@Override
+			public int compare(Student o1, Student o2) {
+
+				return o1.getDepartment().compareTo(o2.getDepartment());
+			}
+		});
 		for (Student string : listStudent) {
 			System.out.println(string);
 		}
@@ -20,7 +28,7 @@ public class CustomeArrayListSigleSort {
 
 }
 
-class Student implements Comparable<Student> {
+class Student {
 	int id;
 	String name;
 	String department;
@@ -53,17 +61,6 @@ class Student implements Comparable<Student> {
 
 	public void setDepartment(String department) {
 		this.department = department;
-	}
-
-	@Override
-	public int compareTo(Student student) {
-		if (this.id == student.getId()) {
-			return 0;
-		} else if (this.id > student.getId()) {
-			return 1;
-		} else {
-			return -1;
-		}
 	}
 
 	public String toString() {

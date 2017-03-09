@@ -22,6 +22,7 @@ public class CustomeArrayListMultipleSort {
 		for (Student student : studentList) {
 			System.out.println(student);
 		}
+
 	}
 
 }
@@ -30,7 +31,7 @@ class MultipleComparator implements Comparator<Student> {
 
 	List<Comparator<Student>> listStudentComparator;
 
-	MultipleComparator(Comparator<Student>... listOfStudentComparator) {
+	public MultipleComparator(Comparator<Student>... listOfStudentComparator) {
 		this.listStudentComparator = Arrays.asList(listOfStudentComparator);
 	}
 

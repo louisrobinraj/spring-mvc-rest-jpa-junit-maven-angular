@@ -22,7 +22,7 @@ public class UserDetail extends BaseEntity {
 	@Column
 	private String token;
 
-	@Column
+	@Column()
 	private boolean isEnableUSer;
 
 	public String getUserName() {
