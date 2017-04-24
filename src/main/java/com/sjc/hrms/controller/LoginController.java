@@ -19,6 +19,7 @@ import com.sjc.hrms.services.UserService;
 
 @RestController
 public class LoginController extends BaseController {
+	
 
 	private static final Logger LOGGER = Logger.getLogger(LoginController.class);
 

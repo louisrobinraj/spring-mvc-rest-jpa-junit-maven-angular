@@ -14,7 +14,6 @@ public class CustomeArrayListSigleSort {
 		listStudent.add(new Student(1, "robin", "MBA"));
 		listStudent.add(new Student(3, "robin", "CS"));
 		Collections.sort(listStudent, new Comparator<Student>() {
-
 			@Override
 			public int compare(Student o1, Student o2) {
 

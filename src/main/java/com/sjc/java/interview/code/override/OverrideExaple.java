@@ -35,7 +35,7 @@ public class OverrideExaple {
 }
 
 class Bank {
-	protected int getRateOfInterest() {
+	protected int getRateOfInterest() {//private
 		return 0;
 	}
 	public int show(){
@@ -45,7 +45,7 @@ class Bank {
 
 class SBI extends Bank {
 	@Override
-	protected int getRateOfInterest() {
+	protected int getRateOfInterest() {//private
 		return 8;
 	}public int show(){
 		return 1;

@@ -13,18 +13,19 @@ public class ArrayListDemo {
 		arraylist.add("Vijay");
 		arraylist.add("Kumar");
 		Collections.sort(arraylist, new Comparator<String>() {
-
 			@Override
 			public int compare(String o1, String o2) {
-
 				return o1.compareTo(o2);
 			}
-
 		});
-		System.out.println("ArrayList in descending order:");
+		System.out.println("ArrayList in Acending order:");
 		for (String str : arraylist) {
 			System.out.println(str);
 		}
-		Collections.swap(arraylist, 0, 2);
+		Collections.reverse(arraylist);
+		System.out.println("dddddddddddddddddd");
+		for (String str : arraylist) {
+			System.out.println(str);
+		}
 	}
 }
